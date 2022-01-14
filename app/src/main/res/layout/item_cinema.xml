@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="222dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/librosm" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="TextView"
+                    android:textSize="24sp"
+                    android:textColor="#E67F01"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/text33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/text44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/text55"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/text66"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/text77"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="13dp"
+                    android:fontFamily="monospace"
+                    android:text="TextView" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
