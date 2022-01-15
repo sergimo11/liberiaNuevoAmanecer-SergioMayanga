@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 editT6.getText().clear();
                 edit7.getText().clear();
                 editT.getText().clear();
-                Toast.makeText(getApplicationContext(), "DATOS DE LA PELICULA SE AGREGARON CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "DATOS DEL LIBRO SE AGREGARON CORRECTAMENTE", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 editT5.getText().clear();
                 editT6.getText().clear();
                 edit7.getText().clear();
-                Toast.makeText(getApplicationContext(),"LA PELICULA SE ELIMINÓ CORRECTAMENTE",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"EL LIBRO SE ELIMINÓ CORRECTAMENTE",Toast.LENGTH_SHORT).show();
             }
         });
 
