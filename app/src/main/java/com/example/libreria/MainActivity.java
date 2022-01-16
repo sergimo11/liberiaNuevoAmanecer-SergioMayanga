@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
         btnBuscar = findViewById(R.id.button5);
 
-        final JavaToll javatoll = new JavaToll(getApplicationContext());
+        final libroTools javatoll = new libroTools(getApplicationContext());
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent MostrarPeliculas = new Intent(getApplicationContext(), Cineando.class);
-                startActivity(MostrarPeliculas);
+                Intent Mostrarlibro = new Intent(getApplicationContext(), libriando.class);
+                startActivity(Mostrarlibro);
             }
         });
 
@@ -67,17 +67,17 @@ public class MainActivity extends AppCompatActivity {
        btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cineverse pels = new Cineverse();
-                javatoll.BuscraPelis(pels, editT.getText().toString());
+                libroverse pels = new libroverse();
+                javatoll.Buscralibro(pels, editT.getText().toString());
 
 
                 edit_1.setText(pels.getCodigo());
-                edit2.setText(pels.getPelicula());
+                edit2.setText(pels.getLibro());
                 edit3.setText(pels.getPais());
-                edit4.setText(pels.getDuracion());
-                editT5.setText(pels.getFecha());
-                editT6.setText(pels.getGenero());
-                edit7.setText(pels.getDirector());
+                edit4.setText(pels.getPaginas());
+                editT5.setText(pels.getGenero());
+                editT6.setText(pels.getDirector());
+                edit7.setText(pels.getEditorial());
 
 
 
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                javatoll.EditarPeliculas(editT.getText().toString(),edit2.getText().toString(), edit3.getText().toString(), edit4.getText().toString(),
+                javatoll.Editarlibro(editT.getText().toString(),edit2.getText().toString(), edit3.getText().toString(), edit4.getText().toString(),
                         editT5.getText().toString(), editT6.getText().toString(), edit7.getText().toString());
 
 

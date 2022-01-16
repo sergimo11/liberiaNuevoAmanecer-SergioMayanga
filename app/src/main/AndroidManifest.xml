@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Cineando"></activity>
+        <activity android:name=".libriando"></activity>
     </application>
 
 </manifest>

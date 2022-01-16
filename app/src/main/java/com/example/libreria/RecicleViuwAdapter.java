@@ -13,19 +13,19 @@ public class RecicleViuwAdapter extends RecyclerView.Adapter<RecicleViuwAdapter.
 
     public static class VieHolder extends RecyclerView.ViewHolder{
 
-    private TextView  codigo,pelicula,pais,duracion,fecha,genero,director;
+    private TextView  codigo,libro,pais,paginas,genero,director,editorial;
 
 
     public VieHolder( View itemView) {
         super(itemView);
 
         codigo = itemView.findViewById(R.id.text11);
-        pelicula = itemView.findViewById(R.id.text22);
+        libro = itemView.findViewById(R.id.text22);
         pais= itemView.findViewById(R.id.text33);
-        duracion = itemView.findViewById(R.id.text44);
-        fecha = itemView.findViewById(R.id.text55);
-        genero = itemView.findViewById(R.id.text66);
-        director = itemView.findViewById(R.id.text77);
+        paginas = itemView.findViewById(R.id.text44);
+        genero= itemView.findViewById(R.id.text55);
+        director = itemView.findViewById(R.id.text66);
+        editorial = itemView.findViewById(R.id.text77);
 
 
 
@@ -34,15 +34,15 @@ public class RecicleViuwAdapter extends RecyclerView.Adapter<RecicleViuwAdapter.
 }
 
 
-public List<Cineverse>cineversesLista;
+public List<libroverse>cineversesLista;
 
-    public RecicleViuwAdapter(List<Cineverse> cineversesLista) {
+    public RecicleViuwAdapter(List<libroverse> cineversesLista) {
         this.cineversesLista = cineversesLista;
     }
 
     @Override
     public VieHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cinema,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_libros,parent,false);
        VieHolder vieHolder=new VieHolder(view);
         return vieHolder;
     }
@@ -50,12 +50,12 @@ public List<Cineverse>cineversesLista;
     @Override
     public void onBindViewHolder( VieHolder holder, int position) {
         holder.codigo.setText(cineversesLista.get(position).getCodigo());
-        holder.pelicula.setText(cineversesLista.get(position).getPelicula());
+        holder.libro.setText(cineversesLista.get(position).getLibro());
         holder.pais.setText(cineversesLista.get(position).getPais());
-        holder.duracion.setText(cineversesLista.get(position).getDuracion());
-        holder.fecha.setText(cineversesLista.get(position).getFecha());
+        holder.paginas.setText(cineversesLista.get(position).getPaginas());
         holder.genero.setText(cineversesLista.get(position).getGenero());
         holder.director.setText(cineversesLista.get(position).getDirector());
+        holder.editorial.setText(cineversesLista.get(position).getEditorial());
 
     }
 

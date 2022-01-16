@@ -8,12 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JavaToll extends SQLiteOpenHelper {
-    private static final String NOm_BD = "NEW STUDIO.db";
+public class libroTools extends SQLiteOpenHelper {
+    private static final String NOm_BD = "Nuevo Amanecer.db";
     private static final int VER_BD = 1;
-    private static final String Tabla_BD = "CREATE TABLE REGISTRO(CODIGO TEXT PRIMARY KEY,PELICULA TEXT ,PAIS  TEXT, DURACION  TEXT , FECHA DE PRODUCCION  TEXT ,GENERO TEXT, DIRECTOR TEXT)";
+    private static final String Tabla_BD = "CREATE TABLE REGISTRO(CODIGO TEXT PRIMARY KEY, LIBRO TEXT ,PAIS  TEXT, PAGINAS  TEXT , GENERO  TEXT ,AUTOR TEXT, EDITORIAL TEXT)";
 
-    public JavaToll(Context context) {
+    public libroTools(Context context) {
 
         super(context, NOm_BD, null, VER_BD);
     }
@@ -29,47 +29,47 @@ public class JavaToll extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(Tabla_BD);
     }
 
-    public void REGISTRAR(String codigo, String pelicula, String pais, String duracion, String fecha, String genero, String director) {
+    public void REGISTRAR(String codigo, String libro , String pais, String paginas, String genero, String autor, String editorial) {
         SQLiteDatabase bd = getWritableDatabase();
 
         if (bd != null) {
-            bd.execSQL("INSERT INTO REGISTRO  VALUES('" + codigo + "',  '" + pelicula + "','" + pais + "','" + duracion + "','" + fecha + "','" + genero + "','" + director + "') ");
+            bd.execSQL("INSERT INTO REGISTRO  VALUES('" + codigo + "',  '" + libro + "','" + pais + "','" + paginas + "','" + genero + "','" + autor + "','" + editorial+ "') ");
             bd.close();
         }
 
     }
 
-    public List<Cineverse> MostrarPeliculas() {
+    public List<libroverse> Mostrarlibro() {
         SQLiteDatabase bd = getReadableDatabase();
         Cursor cursor = bd.rawQuery("SELECT * FROM REGISTRO", null);
 
 
-        List<Cineverse> pelismatines = new ArrayList<>();
+        List<libroverse> libromatines = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do
-                pelismatines.add(new Cineverse(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6)));
+                libromatines.add(new libroverse(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6)));
             while (cursor.moveToNext());
 
 
         }
-        return pelismatines;
+        return libromatines;
     }
 
 
     //BUSCAR DATOS
 
-    public void BuscraPelis(Cineverse pels, String codigo) {
+    public void Buscralibro(libroverse pels, String codigo) {
         SQLiteDatabase bd = getReadableDatabase();
         Cursor cursor = bd.rawQuery("SELECT * FROM REGISTRO WHERE CODIGO='" + codigo + "'", null);
 
         if (cursor.moveToFirst()) {
             do {
-                pels.setPelicula(cursor.getString(1));
+                pels.setLibro(cursor.getString(1));
                 pels.setPais(cursor.getString(2));
-                pels.setDuracion(cursor.getString(3));
-                pels.setFecha(cursor.getString(4));
-                pels.setGenero(cursor.getString(5));
-                pels.setDirector(cursor.getString(6));
+                pels.setPaginas(cursor.getString(3));
+                pels.setGenero(cursor.getString(4));
+                pels.setDirector(cursor.getString(5));
+                pels.setEditorial(cursor.getString(6));
             } while (cursor.moveToNext());
 
 
@@ -79,11 +79,11 @@ public class JavaToll extends SQLiteOpenHelper {
 
     //EDITAR PELICULAS
 
-    public void EditarPeliculas(String codigo, String pelicula, String pais, String duracion, String fecha, String genero, String director) {
+    public void Editarlibro(String codigo, String libro, String pais, String paginas, String genero, String director, String editorial) {
         SQLiteDatabase bd = getWritableDatabase();
 
         if (bd != null) {
-            bd.execSQL("UPDATE REGISTRO SET '"+pelicula+"','"+pais+"','"+duracion+"', '"+fecha+"','"+genero+"','"+director+"',WHERE '"+codigo+"'");
+            bd.execSQL("UPDATE REGISTRO SET '"+libro+"','"+pais+"','"+paginas+"', '"+genero+"','"+director+"','"+editorial+"',WHERE '"+codigo+"'");
             bd.close();
         }
 
